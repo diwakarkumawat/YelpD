@@ -22,13 +22,19 @@ class BusinessCell: UITableViewCell {
     var business: Business! {
         didSet {
             nameLabel.text = business.name
+            distanceLabel.text = business.distance
+            categoriesLabel.text = business.categories
+            addressLabel.text = business.address
+            thumbImageView.setImageWith(business.imageURL!)
+            ratingImageView.setImageWith(business.ratingImageURL!)
+            reviewsCountLabel.text = "\(business.reviewCount!)"
         }
     }
     
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
