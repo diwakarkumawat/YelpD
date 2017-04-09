@@ -146,7 +146,7 @@
         <!--Filters-->
         <scene sceneID="EJf-xa-knc">
             <objects>
-                <viewController id="7sf-Yn-1Rw" sceneMemberID="viewController">
+                <viewController id="7sf-Yn-1Rw" customClass="FiltersViewController" customModule="Yelp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UXR-yT-UZ8"/>
                         <viewControllerLayoutGuide type="bottom" id="WSM-l9-sdl"/>
@@ -163,7 +163,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="103"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PZS-iR-KnZ" id="lH3-rE-2Gy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cuisine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Aj-00-qeg">
@@ -200,9 +200,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Filters" id="sa3-ut-Yeb">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="dyN-uQ-cOD"/>
-                        <barButtonItem key="rightBarButtonItem" title="Search" id="M0B-xs-vjM"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="dyN-uQ-cOD">
+                            <connections>
+                                <action selector="onCancel:" destination="7sf-Yn-1Rw" id="nxo-Wk-5kW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="M0B-xs-vjM">
+                            <connections>
+                                <action selector="onSearch:" destination="7sf-Yn-1Rw" id="hrW-Ki-9Ie"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="KCf-EG-1au" id="W1d-Lx-SSI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9se-zJ-aHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
