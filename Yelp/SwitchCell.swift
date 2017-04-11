@@ -22,6 +22,13 @@ class SwitchCell: UITableViewCell {
 
     weak var delegate: SwitchCellDelegate?
     
+    var model: SearchOption? {
+        didSet {
+            switchLabel.text = model?.title
+            onSwitch.isOn = model?.isOn ?? false
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
