@@ -27,9 +27,9 @@ class SearchOption: NSObject {
         self.parents = [String]()
     }
     
-    init(categoryDict: NSDictionary) {
-        self.value = categoryDict["alias"] as? String
-        self.title = categoryDict["title"] as? String
-        self.parents = categoryDict["parents"] as? [String]
+    init(category: NSDictionary) {
+        self.value = category["alias"] as? String
+        self.title = category["title"] as? String
+        self.parents = category["parents"] as? [String]
     }
 }

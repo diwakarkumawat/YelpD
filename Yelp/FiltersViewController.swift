@@ -101,7 +101,7 @@ class FiltersViewController: UIViewController, UITableViewDataSource, UITableVie
             selectedOption.isOn = value
             
             // if it is an exclusive filter, then needs to unselect other options
-            if (filter.isExclusive!) {
+            if (filter.expanded!) {
                 if (value) {
                     // unset all cells
                     for option in filters[indexPath.section].options! {
